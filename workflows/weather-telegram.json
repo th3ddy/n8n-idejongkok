@@ -1,0 +1,131 @@
+{
+  "name": "weather-telegram",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -864,
+        -176
+      ],
+      "id": "bd33201c-c706-46ac-8ae1-5d9f7f812f1c",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://api.open-meteo.com/v1/forecast?latitude=-6.2&longitude=106.8&current_weather=true",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -656,
+        -176
+      ],
+      "id": "bcc17a30-0a25-476e-86a0-3e38dc61c681",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5e473ed4-80a7-49ae-967c-3f941d9dab3c",
+              "name": "message",
+              "value": "=Suhu Jakarta sekarang: {{ $json.current_weather.temperature }}°C",
+              "type": "string"
+            },
+            {
+              "id": "be100c9c-4394-4c39-b72a-dec08450af38",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -448,
+        -176
+      ],
+      "id": "97cae37c-e6c5-4cfa-9546-d1aa63952dca",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "chatId": "276441270",
+        "text": "={{ $json.message }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -240,
+        -176
+      ],
+      "id": "c53f4fc5-7263-4d4a-9cc0-a1711a1e0887",
+      "name": "Send a text message",
+      "webhookId": "72409636-5ae1-4066-9fac-6e7c313a3305",
+      "credentials": {
+        "telegramApi": {
+          "id": "xb4yTFN8L9BrbXuR",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "c5015138-f9c9-48a6-a0b3-9f148f4105f4",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a53019a4589b3a51726a36f0c4f035efd15357f4bbd08d1f1ec6d32c096e1179"
+  },
+  "nodeGroups": [],
+  "id": "HMnxqJdUedEvM3zj",
+  "tags": []
+}
