@@ -12,7 +12,6 @@
 | **Modul** | Modul 3 — HTTP Requests: Fondasi Semua Node di N8N |
 | **Tanggal Dibuat** | 20 Juni 2026 |
 | **Platform** | n8n self-hosted |
-| **Instance** | `https://wflow.shifttab.my.id` |
 | **GitHub** | `github.com/th3ddy/n8n-idejongkok` |
 
 ---
@@ -235,4 +234,4 @@ Di Set node, kita bisa mengambil data dari node manapun menggunakan syntax:
 
 ---
 
-*Dibuat oleh: Theddy Wijaya | Kelas Agentic AI Automation — Kelas Otomesyen*
+*Dibuat oleh: TW | Kelas Agentic AI Automation — Kelas Otomesyen*
