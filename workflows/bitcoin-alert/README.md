@@ -11,7 +11,6 @@
 | **Modul** | Modul 3 — HTTP Requests: Fondasi Semua Node di N8N |
 | **Tanggal Dibuat** | 20 Juni 2026 |
 | **Platform** | n8n self-hosted |
-| **Instance** | `https://wflow.shifttab.my.id` |
 | **GitHub** | `github.com/th3ddy/n8n-idejongkok` |
 
 ---
@@ -177,12 +176,6 @@ Telegram Bot Token disimpan sebagai **Credential** di n8n (tidak di-hardcode lan
 
 ---
 
-## Screenshot
-
-> *(Lampirkan screenshot workflow dari n8n dan pesan Telegram yang masuk)*
-
----
-
 ## Referensi
 
 | Resource | URL |
@@ -194,4 +187,4 @@ Telegram Bot Token disimpan sebagai **Credential** di n8n (tidak di-hardcode lan
 
 ---
 
-*Dibuat oleh: Theddy Wijaya | Kelas Agentic AI Automation — Kelas Otomesyen*
+*Dibuat oleh: TW | Kelas Agentic AI Automation — Kelas Otomesyen*
